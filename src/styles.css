@@ -54,7 +54,7 @@ main {
 .form--input {
   font-family: "Karla", sans-serif;
   border-radius: 5px;
-  border:1px solid #D5D4D8;
+  border: 1px solid #d5d4d8;
   text-indent: 5px;
 }
 
@@ -63,4 +63,34 @@ main {
   max-height: 30rem;
   /* margin:auto; */
   border-radius: 5px;
+}
+
+.meme{
+  position: relative;
+}
+
+.meme--text {
+  position: absolute;
+  width: 80%;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 15px 0;
+  padding: 0 5px;
+  font-family: impact, sans-serif;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
+    -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
+    2px 2px 5px #000;
+}
+
+.top{
+  top:0
+}
+
+.bottom{
+  bottom:0
 }
