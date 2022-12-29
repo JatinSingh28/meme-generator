@@ -1,5 +1,4 @@
 import React from "react";
-import memes from "./memesData";
 
 export default function Meme() {
   const [meme, setMeme] = React.useState({
@@ -8,10 +7,24 @@ export default function Meme() {
     image:
       "https://static01.nyt.com/images/2021/04/30/multimedia/30xp-meme/29xp-meme-mediumSquareAt3X-v5.jpg",
   });
+  const [allMemes, setAllMemes] = React.useState([]);
+
+  React.useEffect(() => {
+    async function getMemes() {
+      const res = await fetch("https://api.imgflip.com/get_memes");
+      const data = await res.json();
+      setAllMemes(data.data.memes);
+    }
+    getMemes();
+
+    // return ()=>{
+    // }
+  }, []);
+  // console.log(allMemes)
 
   function getNewMeme() {
-    const memeArray = memes.data.memes;
-    const meme = memeArray[Math.floor(Math.random() * memeArray.length)];
+    // const memeArray = allMemes.data.memes;
+    const meme = allMemes[Math.floor(Math.random() * allMemes.length)];
     const url = meme.url;
     // console.log(url);
     setMeme((prevMeme) => ({
